@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dataForm="clr-namespace:Syncfusion.XForms.DataForm;assembly=Syncfusion.SfDataForm.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             x:Class="ECG.Views.LoginPage">
+    <ContentPage.Resources>
+        
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid BackgroundColor="#eee">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="6*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+               
+            </StackLayout>
+            <StackLayout Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <dataForm:SfDataForm x:Name="dataForm" LabelPosition="Top" DataObject="{Binding Login}"  AutoGenerateItems="false">
+                    <dataForm:SfDataForm.Items>
+                        <dataForm:DataFormTextItem Name="Username" Editor="Text"/>
+                        <dataForm:DataFormTextItem Name="Password" Editor="Password"/>
+                        <dataForm:DataFormMaskedEditTextItem Name="Phone" Editor="MaskedEditText"/>
+                        <dataForm:DataFormTextItem Name="Address" Editor="MultilineText"/>
+                        <dataForm:DataFormAutoCompleteItem Name="Countries" Editor="AutoComplete" ItemsSource = "{Binding CountryNames}"/>
+                        <dataForm:DataFormDateItem Name="BirthTime" Editor="Date"/>
+                    </dataForm:SfDataForm.Items>
+                </dataForm:SfDataForm>
+                <!--<buttons:SfButton x:Name="SfButton" Text="Login" />
+                <buttons:SfButton x:Name="normalButton" 
+                                         Grid.Column="1"
+                                         Text="Normal Button"
+                                         HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         BackgroundColor="#D8D6D7"
+                                         TextColor="Black"
+                                         CornerRadius="2">
+                </buttons:SfButton>
+                <buttons:SfButton x:Name="flatButton" 
+                                     Grid.Row="1" 
+                                     Text="Flat Button"
+                                     BorderWidth="0"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     TextColor="Accent"
+                                     BackgroundColor="Transparent"
+                                     CornerRadius="2">
+                </buttons:SfButton>-->
+                <buttons:SfButton x:Name="outlineButton"
+                                     Grid.Row="1"
+                                     Grid.Column="1" 
+                                     Text="Login Now"
+                                     TextColor="Blue"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     BackgroundColor="Transparent"
+                                     BorderThickness="1,1"
+                                     VerticalTextAlignment="Center"
+                                     HeightRequest="40"
+                                     WidthRequest="200"
+                                     CornerRadius="0"
+                                     BorderColor="Blue"
+                                     Command="{Binding LoginCommand}"></buttons:SfButton>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
